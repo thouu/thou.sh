@@ -1,0 +1,90 @@
+:root {
+    --background-color: #eee;
+    --foreground-color: #444;
+    --clickable: #0077aa;
+}
+
+.dark-mode {
+    --background-color: #222;
+    --foreground-color: #ccc;
+    --clickable: #47bef1;
+}
+
+body {
+    font-family: "Arial";
+    margin: 40px auto;
+    max-width: 650px;
+    line-height: 1.6;
+    padding: 0 10px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 auto;
+    background-color: var(--background-color);
+    color: var(--foreground-color);
+}
+
+.title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 18px;
+    margin-bottom: 0;
+    font-weight: bold;
+    font-size: 2em;
+    margin-top: 0.67em;
+    margin-bottom: 0.34em;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: bold;
+}
+
+#theme-switch {
+    height: 30px;
+    width: 30px;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    background: none;
+    cursor: pointer;
+    position: relative;
+    top: 3px;
+}
+
+#theme-switch svg {
+    fill: var(--foreground-color);
+}
+
+#theme-switch svg:last-child {
+    display: none;
+}
+
+.dark-mode #theme-switch svg:first-child {
+    display: none;
+}
+
+.dark-mode #theme-switch svg:last-child {
+    display: block;
+}
+
+.pfp-image img {
+    max-width: 200px;
+}
+
+.text {
+    font-size: 20px;
+}
+
+a {
+    color: var(--clickable);
+    text-decoration: none;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.2;
+}
