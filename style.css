@@ -1,0 +1,70 @@
+:root {
+    --background-color: #eee;
+    --foreground-color: #444;
+    --clickable: #0077aa;
+}
+
+.dark-mode {
+    --background-color: #222;
+    --foreground-color: #ccc;
+    --clickable: #0077aa;
+}
+
+body {
+    font-family: "Arial";
+    font-size: 64px;
+    margin: 40px auto;
+    max-width: 650px;
+    line-height: 1.6;
+    font-size: 18px;
+    padding: 0 10px;
+    background-color: var(--background-color);
+    color: var(--foreground-color);
+}
+
+.title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 1px;
+}
+
+#theme-switch {
+    height: 30px;
+    width: 30px;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    background: none;
+    cursor: pointer;
+    position: relative;
+    top: 3px;
+}
+
+#theme-switch svg {
+    fill: var(--foreground-color);
+}
+
+#theme-switch svg:last-child {
+    display: none;
+}
+
+.dark-mode #theme-switch svg:first-child {
+    display: none;
+}
+
+.dark-mode #theme-switch svg:last-child {
+    display: block;
+}
+
+hr {
+    border: 1px solid var(--foreground-color);
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.2;
+}
