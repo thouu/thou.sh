@@ -7,16 +7,14 @@
 .dark-mode {
     --background-color: #222;
     --foreground-color: #ccc;
-    --clickable: #0077aa;
+    --clickable: #47bef1;
 }
 
 body {
     font-family: "Arial";
-    font-size: 64px;
     margin: 40px auto;
     max-width: 650px;
     line-height: 1.6;
-    font-size: 18px;
     padding: 0 10px;
     background-color: var(--background-color);
     color: var(--foreground-color);
@@ -27,6 +25,7 @@ body {
     justify-content: space-between;
     align-items: center;
     padding-bottom: 1px;
+    font-size: 18px;
 }
 
 #theme-switch {
@@ -61,6 +60,15 @@ body {
 
 hr {
     border: 1px solid var(--foreground-color);
+}
+
+.text {
+    font-size: 20px;
+}
+
+a {
+    color: var(--clickable);
+    text-decoration: none;
 }
 
 h1,
