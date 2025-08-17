@@ -98,6 +98,18 @@ img {
     width: 100%;
 }
 
+footer {
+    position: fixed;
+    left: 50%;
+    bottom: 12px;
+    transform: translateX(-50%);
+    margin: 0;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
 .stamp-small {
     width: 88px;
     height: 31px;

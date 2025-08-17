@@ -1,30 +1,39 @@
 const themeSwitch = document.getElementById('theme-switch');
 const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
-let currentTheme = localStorage.getItem('theme');
+
+const getCookie = (name) => {
+    const m = document.cookie.match(new RegExp('(?:^|; )' + name.replace(/([.$?*|{}()\[\]\\\/\+^])/g, '\\$1') + '=([^;]*)'));
+    return m ? decodeURIComponent(m[1]) : null;
+};
+
+const setCookie = (name, value, days = 365) => {
+    const d = new Date();
+    d.setTime(d.getTime() + days * 24 * 60 * 60 * 1000);
+    document.cookie = `${name}=${encodeURIComponent(value)}; expires=${d.toUTCString()}; path=/; SameSite=Lax`;
+};
 
 const enableDarkmode = () => {
     document.body.classList.add('dark-mode');
-    localStorage.setItem('dark-mode', 'active');
 };
 
 const disableDarkmode = () => {
     document.body.classList.remove('dark-mode');
-    localStorage.removeItem('dark-mode');
 };
 
-if (currentTheme === 'dark') {
+const saved = getCookie('theme');
+if (saved === 'dark') {
     enableDarkmode();
-} else if (currentTheme === null && prefersDarkScheme.matches) {
+} else if (saved === 'light') {
+    disableDarkmode();
+} else if (prefersDarkScheme.matches) {
     enableDarkmode();
 } else {
     disableDarkmode();
 }
 
-themeSwitch.addEventListener('click', () => {
-    darkMode = localStorage.getItem('dark-mode');
-    if (darkMode !== 'active') {
-        enableDarkmode();
-    } else {
-        disableDarkmode();
-    }
-});
+if (themeSwitch) {
+    themeSwitch.addEventListener('click', () => {
+        const isDark = document.body.classList.toggle('dark-mode');
+        setCookie('theme', isDark ? 'dark' : 'light');
+    });
+}
