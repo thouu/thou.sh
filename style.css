@@ -10,12 +10,14 @@
     --clickable: #47bef1;
 }
 
+html { font-size: 112.5%; }
+
 body {
     font-family: "Arial";
-    margin: 40px auto;
-    max-width: 800px;
-    line-height: 1.6;
-    padding: 0 10px;
+    margin: 48px auto;
+    max-width: 60ch;
+    line-height: 1.7;
+    padding: 0 16px;
     background-color: var(--background-color);
     color: var(--foreground-color);
 }
@@ -26,7 +28,7 @@ body {
     align-items: center;
     margin-bottom: 0;
     font-weight: bold;
-    font-size: 36px;
+    font-size: clamp(1.75rem, 3.5vw, 2.5rem);
     margin-top: 0.67em;
     margin-bottom: 0.0em;
     margin-left: 0;
@@ -38,9 +40,9 @@ body {
     display: inline-block;
     color: var(--clickable);
     font-weight: bold;
-    font-size: 18px;
-    padding-left: 4px;
-    padding-right: 4px;
+    font-size: 1rem;
+    padding-left: 6px;
+    padding-right: 6px;
     text-decoration: none;
 }
 
@@ -51,8 +53,8 @@ body {
 }
 
 #theme-switch {
-    height: 30px;
-    width: 30px;
+    height: 36px;
+    width: 36px;
     padding: 0;
     display: flex;
     justify-content: center;
@@ -85,7 +87,7 @@ hr {
 }
 
 .text {
-    font-size: 20px;
+    font-size: 1.125rem;
 }
 
 .text a {
@@ -94,31 +96,33 @@ hr {
 }
 
 img {
-    height: 100%;
+    height: auto;
+    max-width: 100%;
     width: 100%;
+    display: block;
 }
 
 footer {
     position: fixed;
     left: 50%;
-    bottom: 12px;
+    bottom: 16px;
     transform: translateX(-50%);
     margin: 0;
     z-index: 10;
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 10px;
 }
 
 .stamp-small {
     width: 88px;
     height: 31px;
-    image-rendering: optimizeSpeed;             /* STOP SMOOTHING, GIVE ME SPEED  */
-    image-rendering: -moz-crisp-edges;          /* Firefox                        */
-    image-rendering: -o-crisp-edges;            /* Opera                          */
-    image-rendering: -webkit-optimize-contrast; /* Chrome (and eventually Safari) */
-    image-rendering: pixelated;                 /* Universal support since 2021   */
-    image-rendering: optimize-contrast;         /* CSS3 Proposed                  */
+    image-rendering: optimizeSpeed;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: -o-crisp-edges;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: pixelated;
+    image-rendering: optimize-contrast;
     -ms-interpolation-mode: nearest-neighbor;
 }
 
@@ -126,4 +130,20 @@ h1,
 h2,
 h3 {
   line-height: 1.2;
+}
+
+.desktop-shot {
+    display: block;
+    margin-left: calc(-1 * (min(5vw, 24px)));
+    margin-right: calc(-1 * (min(5vw, 24px)));
+}
+
+@media (max-width: 600px) {
+  html { font-size: 106.25%; }
+  body { margin: 32px auto; padding: 0 14px; }
+  #theme-switch { height: 32px; width: 32px; }
+}
+
+@media (min-width: 1200px) {
+  html { font-size: 121.5%; }
 }
