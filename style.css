@@ -2,6 +2,8 @@
     --background-color: #eee;
     --foreground-color: #444;
     --clickable: #0077aa;
+    --page-pad: 16px;
+    --bleed: min(5vw, 24px);
 }
 
 .dark-mode {
@@ -17,7 +19,7 @@ body {
     margin: 48px auto;
     max-width: 60ch;
     line-height: 1.7;
-    padding: 0 16px;
+    padding: 0 var(--page-pad);
     background-color: var(--background-color);
     color: var(--foreground-color);
 }
@@ -134,14 +136,19 @@ h3 {
 
 .desktop-shot {
     display: block;
-    margin-left: calc(-1 * (min(5vw, 24px)));
-    margin-right: calc(-1 * (min(5vw, 24px)));
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% + 2 * var(--bleed));
+    max-width: none;
+    margin: 0;
 }
 
 @media (max-width: 600px) {
   html { font-size: 106.25%; }
   body { margin: 32px auto; padding: 0 14px; }
   #theme-switch { height: 32px; width: 32px; }
+  :root { --bleed: min(3vw, 12px); }
 }
 
 @media (min-width: 1200px) {
