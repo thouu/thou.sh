@@ -106,9 +106,9 @@ img {
 
 footer {
     position: fixed;
-    left: 50%;
+    left: 0;
     bottom: 8px;
-    transform: translateX(-50%);
+    width: 100%;
     margin: 0;
     z-index: 10;
     display: flex;
@@ -120,17 +120,40 @@ footer {
 .footer-note {
     color: #808080;
     font-size: 0.875rem;
-    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 6px;
+    row-gap: 4px;
+    flex-wrap: nowrap;
+    white-space: nowrap;
+    padding: 0 12px;
 }
 
 .footer-note a {
     color: #808080;
     text-decoration: none;
-    border-bottom: 1px solid transparent;
+    white-space: nowrap;
 }
 
 .footer-note a:hover {
-    border-bottom-color: #808080;
+    text-decoration: underline;
+    text-decoration-color: #808080;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 2px;
+}
+
+.footer-label {
+    color: inherit;
+    white-space: nowrap;
+}
+
+.footer-separator {
+    color: #808080;
+    white-space: nowrap;
+    display: inline-flex;
+    align-items: center;
+    font-size: 0.875rem;
 }
 
 .stamp-row {
@@ -176,4 +199,18 @@ h3 {
 
 @media (min-width: 1200px) {
   html { font-size: 121.5%; }
+}
+
+@media (max-width: 900px) {
+  .footer-note {
+    flex-wrap: wrap;
+    white-space: normal;
+    text-align: center;
+    row-gap: 2px;
+  }
+  .footer-label,
+  .footer-note a {
+    white-space: normal;
+  }
+  .footer-separator { display: none; }
 }
