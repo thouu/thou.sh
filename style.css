@@ -143,6 +143,13 @@ footer {
     text-underline-offset: 2px;
 }
 
+.tor-availability {
+    display: inline-flex;
+    align-items: center;
+    column-gap: 6px;
+    white-space: nowrap;
+}
+
 .footer-label {
     color: inherit;
     white-space: nowrap;
@@ -209,8 +216,13 @@ h3 {
     row-gap: 2px;
   }
   .footer-label,
+  .tor-link,
   .footer-note a {
     white-space: normal;
+  }
+  .tor-availability {
+    flex-wrap: wrap;
+    justify-content: center;
   }
   .footer-separator { display: none; }
 }
