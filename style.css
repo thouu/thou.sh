@@ -107,10 +107,33 @@ img {
 footer {
     position: fixed;
     left: 50%;
-    bottom: 16px;
+    bottom: 8px;
     transform: translateX(-50%);
     margin: 0;
     z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.footer-note {
+    color: #808080;
+    font-size: 0.875rem;
+    text-align: center;
+}
+
+.footer-note a {
+    color: #808080;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+}
+
+.footer-note a:hover {
+    border-bottom-color: #808080;
+}
+
+.stamp-row {
     display: flex;
     align-items: center;
     gap: 10px;
