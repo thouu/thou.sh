@@ -2,9 +2,12 @@
 <html>
     <head>
         <title>thou's site</title>
-        <link rel="preload" href="fonts/InterVariable.woff2" as="font" type="font/woff2">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="preload" href="fonts/InterVariable.woff2" as="font" type="font/woff2" crossorigin>
+        <link rel="preload" as="image" href="images/desktop/desktop-2025-10-31.avif" imagesrcset="images/desktop/desktop-2025-10-31.avif" imagesizes="100vw" type="image/avif">
         <link rel="stylesheet" href="style.css">
         <script type="text/javascript" src="scripts/darkmode.js" defer></script>
+        <script defer>if('serviceWorker' in navigator){navigator.serviceWorker.register('sw.js');}</script>
     </head>
     <body>
         <div class="title">
@@ -32,9 +35,11 @@
             <source srcset="images/desktop/desktop-2025-10-31.webp" type="image/webp">
             <img
                 class="logo"
-                loading="lazy"
+                fetchpriority="high"
                 alt="add alt text"
                 src="images/desktop/desktop-2025-10-31.png"
+                width="1920"
+                height="1080"
             />
         </picture>
         <footer>
@@ -46,9 +51,11 @@
                             <source srcset="images/stamps/stamp-aws/stamp-aws-small.webp" type="image/webp">
                             <img
                                 class="logo"
-                                loading="lazy"
+                                loading="lazy" decoding="async"
                                 alt="88x31 pixel button claiming the server hosting the website uses AWS."
                                 src="images/stamps/stamp-aws/stamp-aws-small.png"
+                                width="88"
+                                height="31"
                             />
                         </picture>
                     </a>
@@ -58,9 +65,11 @@
                         <picture>
                             <img
                                 class="logo"
-                                loading="lazy"
+                                loading="lazy" decoding="async"
                                 alt="88x31 pixel button claiming the server hosting the website uses Debian."
                                 src="images/stamps/stamp-debian/stamp-debian.png"
+                                width="88"
+                                height="31"
                             />
                         </picture>
                     </a>
@@ -70,9 +79,11 @@
                         <picture>
                             <img
                                 class="logo"
-                                loading="lazy"
+                                loading="lazy" decoding="async"
                                 alt="88x31 pixel button claiming the server hosting the website uses Debian."
                                 src="images/stamps/stamp-thou/stamp-thou-new.png"
+                                width="88"
+                                height="31"
                             />
                         </picture>
                     </a>
@@ -83,9 +94,11 @@
                             <source srcset="images/stamps/stamp-peak/peak-88x31.avif" type="image/avif">
                             <img
                                 class="logo"
-                                loading="lazy"
+                                loading="lazy" decoding="async"
                                 alt="add alt text"
                                 src="images/stamps/stamp-peak/peak-88x31.gif"
+                                width="88"
+                                height="31"
                             />
                         </picture>
                     </a>
