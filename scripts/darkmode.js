@@ -37,8 +37,3 @@ if (themeSwitch) {
         setCookie('theme', isDark ? 'dark' : 'light');
     });
 }
-
-const torAvailability = document.querySelector('.tor-availability');
-if (torAvailability && window.location.hostname.endsWith('.onion')) {
-    torAvailability.style.display = 'none';
-}
